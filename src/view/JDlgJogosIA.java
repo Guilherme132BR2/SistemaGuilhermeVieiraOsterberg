@@ -91,13 +91,13 @@ public class JDlgJogosIA extends javax.swing.JDialog {
         jFmtPreco = new javax.swing.JFormattedTextField();
         jFmtDataLancamento = new javax.swing.JFormattedTextField();
         jLabel5 = new javax.swing.JLabel();
-        jCboPlat = new javax.swing.JComboBox<Plataforma>();
+        jCboPlat = new javax.swing.JComboBox<PlataformaGvo>();
         jLabel3 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jTxtVersaoFisica = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jFmtIdJogos = new javax.swing.JFormattedTextField();
-        jCboPatrocinadores = new javax.swing.JComboBox<Patrocinadores>();
+        jCboPatrocinadores = new javax.swing.JComboBox<PatrocinadoresGvo>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -233,7 +233,7 @@ public class JDlgJogosIA extends javax.swing.JDialog {
                         .addGap(20, 20, 20)
                         .addComponent(jFmtPreco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
@@ -319,8 +319,8 @@ public class JDlgJogosIA extends javax.swing.JDialog {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBtnCancelar;
     private javax.swing.JButton jBtnOk;
-    private javax.swing.JComboBox<Patrocinadores> jCboPatrocinadores;
-    private javax.swing.JComboBox<Plataforma> jCboPlat;
+    private javax.swing.JComboBox<PatrocinadoresGvo> jCboPatrocinadores;
+    private javax.swing.JComboBox<PlataformaGvo> jCboPlat;
     private javax.swing.JFormattedTextField jFmtDataLancamento;
     private javax.swing.JFormattedTextField jFmtIdJogos;
     private javax.swing.JFormattedTextField jFmtPreco;

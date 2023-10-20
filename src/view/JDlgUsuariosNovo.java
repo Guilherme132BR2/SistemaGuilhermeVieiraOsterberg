@@ -5,8 +5,8 @@
  */
 package view;
 
-import bean.JogosGvo;
-import dao.Jogos_DAO;
+import bean.UsuariosGvo;
+import dao.Usuarios_DAO;
 import java.util.List;
 import tools.Util;
 
@@ -14,26 +14,27 @@ import tools.Util;
  *
  * @author Guilherme132BR
  */
-public class JDlgJogosNovo extends javax.swing.JDialog {
+public class JDlgUsuariosNovo extends javax.swing.JDialog {
 
     /**
-     * Creates new form JDlgJogosNovo
+     * Creates new form JDlgUsuariosNovo
      */
-    JDlgJogosIA jDlgJogosIA;
-    JogosGvo jogosGvo;
-    Jogos_DAO jogos_DAO;
-    JogosControle jogosControle;    
-    public JDlgJogosNovo(java.awt.Frame parent, boolean modal) {
+    JDlgUsuariosIA jDlgUsuariosIA;
+    UsuariosGvo usuariosGvo;
+    Usuarios_DAO usuarios_DAO;
+    UsuariosControle usuariosControle;
+
+    public JDlgUsuariosNovo(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
         setLocationRelativeTo(null);
-        setTitle("Jogos");
-        jDlgJogosIA = new JDlgJogosIA(null, true);
-        jogos_DAO = new Jogos_DAO();
-        List lista = jogos_DAO.listAll();
-        jogosControle = new JogosControle();
-        jogosControle.setList(lista);
-        jTable1.setModel(jogosControle);
+        setTitle("Usuarios");
+        jDlgUsuariosIA = new JDlgUsuariosIA(null, true);
+        usuarios_DAO = new Usuarios_DAO();
+        List lista = usuarios_DAO.listAll();
+        usuariosControle = new UsuariosControle();
+        usuariosControle.setList(lista);
+        jTable1.setModel(usuariosControle);
     }
 
     /**
@@ -112,28 +113,28 @@ public class JDlgJogosNovo extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jBtnIncluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnIncluirActionPerformed
-        jDlgJogosIA.setTitle("inclusão");
-        jDlgJogosIA.setVisible(true);
-
+        jDlgUsuariosIA.setTitle("inclusão");
+        jDlgUsuariosIA.setVisible(true);
     }//GEN-LAST:event_jBtnIncluirActionPerformed
 
     private void jBtnAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnAlterarActionPerformed
-        jDlgJogosIA.setTitle("alteração");
-        jDlgJogosIA.setVisible(true);
+        jDlgUsuariosIA.setTitle("alteração");
+        jDlgUsuariosIA.setVisible(true);
     }//GEN-LAST:event_jBtnAlterarActionPerformed
 
     private void jBtnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnExcluirActionPerformed
-        if(Util.perguntar("Deseja excluir jogo?")==true){
+        if (Util.perguntar("Deseja excluir a guitarra?") == true) {
             int sel = jTable1.getSelectedRow();
 
-            JogosGvo jogosGvo = jogosControle.getBean(sel);
-            jogos_DAO.delete(jogosGvo);
+            UsuariosGvo usuariosGvo = usuariosControle.getBean(sel);
+            usuarios_DAO.delete(usuariosGvo);
 
-            List lista = jogos_DAO.listAll();
-            jogosControle.setList(lista);
+            List lista = usuarios_DAO.listAll();
+            usuariosControle.setList(lista);
             Util.mensagem("registro excluido");
-        }else{
-            Util.mensagem("Exclusão Cancelada");}
+        } else {
+            Util.mensagem("Exclusão Cancelada");
+        }
     }//GEN-LAST:event_jBtnExcluirActionPerformed
 
     /**
@@ -153,21 +154,20 @@ public class JDlgJogosNovo extends javax.swing.JDialog {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(JDlgJogosNovo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JDlgUsuariosNovo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(JDlgJogosNovo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JDlgUsuariosNovo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(JDlgJogosNovo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JDlgUsuariosNovo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(JDlgJogosNovo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JDlgUsuariosNovo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                JDlgJogosNovo dialog = new JDlgJogosNovo(new javax.swing.JFrame(), true);
+                JDlgUsuariosNovo dialog = new JDlgUsuariosNovo(new javax.swing.JFrame(), true);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {
